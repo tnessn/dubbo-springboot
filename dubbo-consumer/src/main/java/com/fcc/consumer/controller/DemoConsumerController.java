@@ -18,8 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoConsumerController {
 
-    @Reference(version = "${demo.service.version}",url = "dubbo://127.0.0.1:20880")
+    @Reference(version = "${demo.service.version}")
     private DemoService demoService;
+    
+    
+    @RequestMapping("")
+    public String hello() {
+        return "hello";
+    }
+    
 
     @RequestMapping("/sayHello/{name}")
     public String sayHello(@PathVariable("name") String name) {
