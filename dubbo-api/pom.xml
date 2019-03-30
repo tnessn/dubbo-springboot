@@ -26,6 +26,10 @@
 			<groupId>org.dromara</groupId>
 			<artifactId>hmily-spring-boot-starter-dubbo</artifactId>
 		</dependency>
+			<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>
