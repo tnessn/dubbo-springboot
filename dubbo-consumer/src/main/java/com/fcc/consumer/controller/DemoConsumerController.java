@@ -20,9 +20,14 @@ public class DemoConsumerController {
     }
     
 
-    @RequestMapping("/sayHello/{name}")
-    public String sayHello(@PathVariable("name") String name) {
-        return demoService.sayHello(name);
+    @RequestMapping("/findAllUser")
+    public String sayHello() {
+        return demoService.findAllUser();
+    }
+    
+    @RequestMapping("/updateUser/{age}")
+    public void updateUser(@PathVariable String age) {
+        demoService.updateUser(age);
     }
 
    

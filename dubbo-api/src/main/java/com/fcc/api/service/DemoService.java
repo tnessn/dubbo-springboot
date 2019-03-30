@@ -2,7 +2,10 @@ package com.fcc.api.service;
 
 public interface DemoService {
 
-	String sayHello(String name);
+	String findAllUser();
+	
+	
+	void updateUser(String age);
 
 
 }
