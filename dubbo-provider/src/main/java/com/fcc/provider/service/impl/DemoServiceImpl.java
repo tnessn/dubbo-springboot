@@ -12,8 +12,8 @@ import com.fcc.provider.dao.entity.UserEntity;
 import com.fcc.provider.dao.entity.UserEntityCriteria;
 import com.fcc.provider.dao.mapper.UserMapper;
 
-@Service(version = "1.0.0")
 @Component
+@Service(version = "1.0.0")
 public class DemoServiceImpl implements DemoService {
 	
 	

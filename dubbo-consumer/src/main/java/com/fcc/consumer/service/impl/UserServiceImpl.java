@@ -8,8 +8,9 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.fcc.api.service.DemoService;
 import com.fcc.consumer.service.UserService;
 
-@Service(version = "1.0.0")
+
 @Component
+@Service(version = "1.0.0")
 public class UserServiceImpl implements UserService{
 	
 	
