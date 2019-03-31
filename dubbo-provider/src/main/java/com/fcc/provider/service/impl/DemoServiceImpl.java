@@ -3,6 +3,7 @@ package com.fcc.provider.service.impl;
 import javax.annotation.Resource;
 
 import org.dromara.hmily.annotation.Hmily;
+import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
@@ -12,6 +13,7 @@ import com.fcc.provider.dao.entity.UserEntityCriteria;
 import com.fcc.provider.dao.mapper.UserMapper;
 
 @Service(version = "1.0.0")
+@Component
 public class DemoServiceImpl implements DemoService {
 	
 	
