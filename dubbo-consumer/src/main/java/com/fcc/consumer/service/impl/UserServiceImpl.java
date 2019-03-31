@@ -27,11 +27,11 @@ public class UserServiceImpl implements UserService{
 	
 	
 	public void confirm(String age) {
-		System.out.println("确认");
+		System.out.println("consumner确认");
 	}
 	
 	public void cancel(String age) {
-		System.out.println("取消");
+		System.out.println("consumner取消");
 	}
 	
 	

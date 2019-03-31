@@ -39,11 +39,11 @@ public class DemoServiceImpl implements DemoService {
 	
 	
 	public void confirm(String age) {
-		System.out.println("确认");
+		System.out.println("provider确认");
 	}
 	
 	public void cancel(String age) {
-		System.out.println("取消");
+		System.out.println("provider取消");
 	}
 
 }
