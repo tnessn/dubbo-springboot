@@ -2,7 +2,7 @@ package com.fcc.provider.service.impl;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Component;
+import org.dromara.hmily.annotation.Hmily;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
@@ -26,7 +26,7 @@ public class DemoServiceImpl implements DemoService {
 
 
 	@Override
-//	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
+	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		UserEntity record=new UserEntity();
 		record.setAge(Byte.valueOf(age));

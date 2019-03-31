@@ -1,6 +1,6 @@
 package com.fcc.consumer.service.impl;
 
-import org.springframework.stereotype.Component;
+import org.dromara.hmily.annotation.Hmily;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService{
 	
 
 	@Override
-//	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
+	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		demoService.updateUser(age);		
 	}
