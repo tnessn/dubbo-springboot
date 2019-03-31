@@ -22,6 +22,10 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>false</optional>
 		</dependency>
+				<dependency>
+			<groupId>com.alibaba.fescar</groupId>
+			<artifactId>fescar-dubbo-alibaba</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>

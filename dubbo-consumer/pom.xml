@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-consumer</artifactId>
+	<artifactId>dubbo-consumer</artifactId>
 
-    <name>dubbo-consumer</name>
-    <description>Dubbo consumer for Spring Boot</description>
+	<name>dubbo-consumer</name>
+	<description>Dubbo consumer for Spring Boot</description>
 
-    <parent>
-        <groupId>com.fcc.dubbo</groupId>
-        <artifactId>dubbo-springboot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<groupId>com.fcc.dubbo</groupId>
+		<artifactId>dubbo-springboot</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 
-    <dependencies>
-        		<dependency>
+	<dependencies>
+		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo-registry-nacos</artifactId>
 		</dependency>
@@ -33,7 +34,15 @@
 			<artifactId>dubbo-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.alibaba.fescar</groupId>
+			<artifactId>fescar-dubbo-alibaba</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.fescar</groupId>
+			<artifactId>fescar-spring</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

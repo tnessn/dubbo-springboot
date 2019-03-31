@@ -58,6 +58,10 @@
 			<artifactId>dubbo-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+
+
+
+
 	</dependencies>
 
 	<!-- mvn mybatis-generator:generate -->

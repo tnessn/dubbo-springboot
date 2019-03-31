@@ -56,6 +56,20 @@
 				<artifactId>dubbo-spring-boot-starter</artifactId>
 				<version>0.2.0</version>
 			</dependency>
+
+			<!--dependency for Alibaba Dubbo -->
+			<dependency>
+				<groupId>com.alibaba.fescar</groupId>
+				<artifactId>fescar-dubbo-alibaba</artifactId>
+				<version>0.4.0</version>
+				</dependency>
+				<dependency>
+					<groupId>com.alibaba.fescar</groupId>
+					<artifactId>fescar-spring</artifactId>
+					<version>0.4.0</version>
+				</dependency>
+
+
 			<!-- dubbo end -->
 
 			<!-- zookeeper注册中心 -->
