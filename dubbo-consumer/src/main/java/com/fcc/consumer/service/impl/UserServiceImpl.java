@@ -1,6 +1,5 @@
 package com.fcc.consumer.service.impl;
 
-import org.dromara.hmily.annotation.Hmily;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -20,19 +19,10 @@ public class UserServiceImpl implements UserService{
 	
 
 	@Override
-	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		demoService.updateUser(age);		
 	}
 	
-	
-	public void confirm(String age) {
-		System.out.println("consumner确认");
-	}
-	
-	public void cancel(String age) {
-		System.out.println("consumner取消");
-	}
 	
 	
 }
