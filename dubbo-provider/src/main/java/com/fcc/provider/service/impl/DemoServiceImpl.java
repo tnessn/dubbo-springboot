@@ -2,17 +2,16 @@ package com.fcc.provider.service.impl;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Component;
+import org.dromara.hmily.annotation.Hmily;
+import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.fcc.api.service.DemoService;
 import com.fcc.provider.dao.entity.UserEntity;
 import com.fcc.provider.dao.entity.UserEntityCriteria;
 import com.fcc.provider.dao.mapper.UserMapper;
 
-@Component
-@Service(version = "1.0.0")
+@Service("demoService")
 public class DemoServiceImpl implements DemoService {
 	
 	
@@ -27,6 +26,7 @@ public class DemoServiceImpl implements DemoService {
 
 
 	@Override
+	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		UserEntity record=new UserEntity();
 		record.setAge(Byte.valueOf(age));
@@ -35,6 +35,13 @@ public class DemoServiceImpl implements DemoService {
 		userMapper.updateByExampleSelective(record, example);
 	}
 	
+	public void confirm(String age) {
+		System.out.println("confirm");
+	}
+	
+	public void cancel(String age) {
+		System.out.println("cancel");
+	}
 	
 
 }

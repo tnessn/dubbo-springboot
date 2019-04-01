@@ -22,10 +22,20 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>false</optional>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>com.alibaba.fescar</groupId>
 			<artifactId>fescar-dubbo-alibaba</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.dromara</groupId>
+			<artifactId>hmily-spring-boot-starter-dubbo</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>
