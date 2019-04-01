@@ -2,8 +2,10 @@ package com.fcc.consumer.controller;
 
 import javax.annotation.Resource;
 
+import org.jboss.logging.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -37,5 +39,9 @@ public class DemoConsumerController {
     	userService.updateUser(age);
     }
 
+    @RequestMapping("/getNameByAge")
+    String getNameByAge(@RequestParam String age,@RequestParam(defaultValue = "0") long millisecond) {
+    	return demoService.getNameByAge(age, millisecond);
+    }
    
 }

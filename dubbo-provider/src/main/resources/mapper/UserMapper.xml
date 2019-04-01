@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.fcc.provider.dao.mapper.UserMapper">
 
-
+<select id="findByAge" resultMap="com.fcc.provider.dao.mapper.base.UserBaseMapper.BaseResultMap">
+select * from user where age=#{age} for update;
+</select>
   
 </mapper>

@@ -1,9 +1,13 @@
 package com.fcc.provider.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.dromara.hmily.annotation.Hmily;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
 import com.fcc.api.service.DemoService;
@@ -42,6 +46,42 @@ public class DemoServiceImpl implements DemoService {
 	public void cancel(String age) {
 		System.out.println("cancel");
 	}
+
+
+    /**
+     * 测试数据库隔离级别
+     */
+    @Override
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    public String getNameByAge(String age,long millisecond) {
+		UserEntity user = userMapper.findByAge(age);
+		
+		
+		try {
+			Thread.sleep(millisecond);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return user.getName();
+    }
 	
+    
+    
+    /**
+     * 测试数据库隔离级别
+     */
+    @Override
+    @Transactional
+    public void updateByAge(String age,String name) {
+    	UserEntityCriteria example=new UserEntityCriteria();
+    	example.createCriteria().andAgeEqualTo(Byte.valueOf(age));
+		UserEntity userEntity=new UserEntity();
+		userEntity.setName(name);
+		 userMapper.updateByExampleSelective(userEntity,example);
+    }
+    
 
 }

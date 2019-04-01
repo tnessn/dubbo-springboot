@@ -9,5 +9,9 @@ public interface DemoService {
 	@Hmily
 	void updateUser(String age);
 
+	String getNameByAge(String age,long millisecond);
+
+	void updateByAge(String age, String name);
+
 
 }
