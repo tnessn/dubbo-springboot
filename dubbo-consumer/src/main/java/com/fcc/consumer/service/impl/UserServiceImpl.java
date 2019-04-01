@@ -22,6 +22,7 @@ public class UserServiceImpl implements UserService{
 	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		demoService.updateUser(age);		
+		System.out.println(1/0);
 	}
 	
 	public void confirm(String age) {
