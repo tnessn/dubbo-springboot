@@ -3,6 +3,7 @@ package com.fcc.provider.service.impl;
 import javax.annotation.Resource;
 
 import org.dromara.hmily.annotation.Hmily;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +16,8 @@ import com.fcc.provider.dao.mapper.UserMapper;
 
 @Service("demoService")
 public class DemoServiceImpl implements DemoService {
+	
+	private static Logger LOG = org.slf4j.LoggerFactory.getLogger(DemoServiceImpl.class);
 	
 	
 	@Resource
@@ -38,11 +41,11 @@ public class DemoServiceImpl implements DemoService {
 	}
 	
 	public void confirm(String age) {
-		System.out.println("confirm");
+		LOG.info("provider confirm");
 	}
 	
 	public void cancel(String age) {
-		System.out.println("cancel");
+		LOG.info("provider cancel");
 	}
 
 
