@@ -2,7 +2,6 @@ package com.fcc.provider.service.impl;
 
 import javax.annotation.Resource;
 
-import org.dromara.hmily.annotation.Hmily;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -31,7 +30,6 @@ public class DemoServiceImpl implements DemoService {
 
 
 	@Override
-	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		UserEntity record=new UserEntity();
 		record.setAge(Byte.valueOf(age));

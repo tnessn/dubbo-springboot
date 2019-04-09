@@ -29,65 +29,41 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<curator-framework.version>4.0.1</curator-framework.version>
-		<zookeeper.version>3.4.9</zookeeper.version>
-		<dubbo.starter.version>0.2.0</dubbo.starter.version>
+          <fescar.version>0.4.0</fescar.version>
+          <dubbo.alibaba.version>2.6.5</dubbo.alibaba.version>
+          <dubbo.registry.nacos.version>0.0.2</dubbo.registry.nacos.version>
 	</properties>
+	
+	
+	<dependencies>
+	 <dependency>
+           <groupId>com.alibaba.fescar</groupId>
+           <artifactId>fescar-spring</artifactId>
+           <version>${fescar.version}</version>
+       </dependency>
+       <dependency>
+           <groupId>com.alibaba.fescar</groupId>
+           <artifactId>fescar-dubbo-alibaba</artifactId>
+           <version>${fescar.version}</version>
+           <exclusions>
+               <exclusion>
+                   <artifactId>dubbo</artifactId>
+                   <groupId>org.apache.dubbo</groupId>
+               </exclusion>
+           </exclusions>
+       </dependency>
+       <dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>dubbo</artifactId>
+           <version>${dubbo.alibaba.version}</version>
+       </dependency>
+       <dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>dubbo-registry-nacos</artifactId>
+           <version>${dubbo.registry.nacos.version}</version>
+       </dependency>
+	</dependencies>
 
-
-
-	<dependencyManagement>
-		<dependencies>
-
-			<dependency>
-				<groupId>org.dromara</groupId>
-				<artifactId>hmily-spring-boot-starter-dubbo</artifactId>
-				<version>2.0.1-RELEASE</version>
-			</dependency>
-
-			<!-- dubbo start -->
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>dubbo-registry-nacos</artifactId>
-				<version>0.0.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.boot</groupId>
-				<artifactId>dubbo-spring-boot-starter</artifactId>
-				<version>0.2.0</version>
-			</dependency>
-
-			<!--dependency for Alibaba Dubbo -->
-			<dependency>
-				<groupId>com.alibaba.fescar</groupId>
-				<artifactId>fescar-dubbo-alibaba</artifactId>
-				<version>0.4.0</version>
-			</dependency>
-			<dependency>
-				<groupId>com.alibaba.fescar</groupId>
-				<artifactId>fescar-spring</artifactId>
-				<version>0.4.0</version>
-			</dependency>
-
-
-			<!-- dubbo end -->
-
-
-
-			<dependency>
-				<groupId>org.dromara</groupId>
-				<artifactId>hmily-spring-boot-starter-dubbo</artifactId>
-				<version>2.0.1-RELEASE</version>
-			</dependency>
-
-
-			<!-- zookeeper注册中心 -->
-			<!-- <dependency> <groupId>org.apache.curator</groupId> <artifactId>curator-framework</artifactId> 
-				<version>${curator-framework.version}</version> </dependency> <dependency> 
-				<groupId>org.apache.zookeeper</groupId> <artifactId>zookeeper</artifactId> 
-				<version>${zookeeper.version}</version> </dependency> -->
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>

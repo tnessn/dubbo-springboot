@@ -2,7 +2,6 @@ package com.fcc.consumer.service.impl;
 
 import javax.annotation.Resource;
 
-import org.dromara.hmily.annotation.Hmily;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,6 @@ public class UserServiceImpl implements UserService{
 	
 
 	@Override
-	@Hmily(confirmMethod = "confirm",cancelMethod = "cancel")
 	public void updateUser(String age) {
 		demoService.updateUser(age);		
 		System.out.println(1/0);
