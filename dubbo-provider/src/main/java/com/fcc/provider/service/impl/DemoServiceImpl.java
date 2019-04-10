@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fescar.core.context.RootContext;
 import com.fcc.api.service.DemoService;
 import com.fcc.provider.dao.entity.UserEntity;
 import com.fcc.provider.dao.entity.UserEntityCriteria;
@@ -31,6 +32,7 @@ public class DemoServiceImpl implements DemoService {
 
 	@Override
 	public void updateUser(String age) {
+		System.out.println("全局事务id ：" + RootContext.getXID());
 		UserEntity record=new UserEntity();
 		record.setAge(Byte.valueOf(age));
 		UserEntityCriteria example=new UserEntityCriteria();

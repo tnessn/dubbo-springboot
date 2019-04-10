@@ -5,6 +5,8 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fescar.core.context.RootContext;
+import com.alibaba.fescar.spring.annotation.GlobalTransactional;
 import com.fcc.api.service.DemoService;
 import com.fcc.consumer.service.UserService;
 
@@ -20,17 +22,10 @@ public class UserServiceImpl implements UserService{
 	
 
 	@Override
+	@GlobalTransactional
 	public void updateUser(String age) {
+		   System.out.println("开始全局事务，XID = " + RootContext.getXID());
 		demoService.updateUser(age);		
-		System.out.println(1/0);
+		throw new RuntimeException();
 	}
-	
-	public void confirm(String age) {
-		LOG.info("消费者confirm");
-	}
-	
-	public void cancel(String age) {
-		LOG.info("消费者cancel");
-	}
-	
 }
