@@ -9,7 +9,6 @@ import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 
 @EnableDubbo
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
-@ImportResource(locations = "spring-dubbo.xml")
 public class DubboConsumerApplication {
 
     public static void main(String[] args) {

@@ -3,10 +3,10 @@ package com.fcc.provider.service.impl;
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fescar.core.context.RootContext;
 import com.fcc.api.service.DemoService;
@@ -14,7 +14,8 @@ import com.fcc.provider.dao.entity.UserEntity;
 import com.fcc.provider.dao.entity.UserEntityCriteria;
 import com.fcc.provider.dao.mapper.UserMapper;
 
-@Service("demoService")
+
+@Service(version = "1.0.0")
 public class DemoServiceImpl implements DemoService {
 	
 	private static Logger LOG = org.slf4j.LoggerFactory.getLogger(DemoServiceImpl.class);
