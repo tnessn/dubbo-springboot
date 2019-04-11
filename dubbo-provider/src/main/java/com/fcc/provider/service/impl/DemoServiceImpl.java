@@ -25,11 +25,6 @@ public class DemoServiceImpl implements DemoService {
 	private UserMapper userMapper;
 	
 
-    @Override
-    public String findAllUser() {
-        return JSON.toJSONString(userMapper.selectByExample(null));
-    }
-
 
 	@Override
 	public void updateUser(String age) {
