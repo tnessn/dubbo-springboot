@@ -15,16 +15,5 @@ public class DemoProviderController {
     private DemoService demoService;
     
     
-
-    @RequestMapping("/getNameByAge")
-    String getNameByAge(@RequestParam String age,@RequestParam(defaultValue = "0") long millisecond) {
-    	return demoService.getNameByAge(age, millisecond);
-    }
-    
-    
-    @RequestMapping("/updateByAge")
-    void updateByAge(@RequestParam String age,@RequestParam String name) {
-    	demoService.updateByAge(age, name);
-    }
    
 }
