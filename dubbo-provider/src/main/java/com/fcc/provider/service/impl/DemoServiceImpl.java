@@ -29,9 +29,20 @@ public class DemoServiceImpl implements DemoService {
 		UserEntity record=new UserEntity();
 		record.setAge(Byte.valueOf(age));
 		UserEntityCriteria example=new UserEntityCriteria();
-		example.createCriteria().andIdEqualTo(3L);
+		example.createCriteria().andIdEqualTo("3");
 		userMapper.updateByExampleSelective(record, example);
 	}
+	
+	@Override
+	public void createUser(String age) {
+		System.out.println("全局事务id ：" + RootContext.getXID());
+		UserEntity record=new UserEntity();
+		record.setAge(Byte.valueOf(age));
+		record.setName("jhjh");
+		record.setId(age);
+		userMapper.insertSelective(record);
+	}
+	
 	
 
 }

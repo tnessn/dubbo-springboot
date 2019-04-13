@@ -27,4 +27,11 @@ public class UserServiceImpl implements UserService{
 		demoService.updateUser(age);		
 		throw new RuntimeException();
 	}
+	
+	@Override
+	@GlobalTransactional
+	public void createUser(String age) {
+		   System.out.println("开始全局事务，XID = " + RootContext.getXID());
+		demoService.createUser(age);		
+	}
 }

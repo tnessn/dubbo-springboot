@@ -87,7 +87,6 @@
                 enableDeleteByPrimaryKey="true" enableDeleteByExample="true"
                 enableUpdateByPrimaryKey="true" enableUpdateByExample="true"
                 enableCountByExample="true" enableInsert="true" delimitAllColumns="true">
-                <generatedKey column="id" sqlStatement="MySql" identity="true" />
          </table>
 
 

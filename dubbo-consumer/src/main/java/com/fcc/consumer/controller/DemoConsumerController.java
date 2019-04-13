@@ -19,5 +19,11 @@ public class DemoConsumerController {
     public void updateUser(@PathVariable String age) {
     	userService.updateUser(age);
     }
+    
+    @RequestMapping("/createUser/{age}")
+    public void createUser(@PathVariable String age) {
+    	userService.createUser(age);
+    }
+
 
 }
