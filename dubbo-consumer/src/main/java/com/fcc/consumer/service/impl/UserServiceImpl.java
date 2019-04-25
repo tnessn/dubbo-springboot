@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
 	public void updateUser(String age) {
 		   System.out.println("开始全局事务，XID = " + RootContext.getXID());
 		demoService.updateUser(age);		
-		throw new RuntimeException();
+		//throw new RuntimeException();
 	}
 	
 	@Override
